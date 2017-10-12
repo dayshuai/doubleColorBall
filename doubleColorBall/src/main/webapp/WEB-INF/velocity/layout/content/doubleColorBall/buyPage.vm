@@ -1,0 +1,251 @@
+<div id="mainPanels" class="newbieGuideStep1">
+<div class="selectNum cleafix">
+	<div class="title">
+		<h2 class="redTitle"><strong>红球区</strong></h2>
+		<h2 class="blueTitle"><strong>蓝球区</strong></h2>
+	</div>
+	<div id="statisticsWrap" class="hide showHotCold"></div>
+	<div class="ballarea clearfix">
+		<div class="redBallBox">
+	<ul class="clearfix">
+		<li>
+			<a href="javascript:;" hidefocus="true" rel="nofollow" class="js_ball" data-value="1">01</a>
+		</li>
+		<li>
+			<a href="javascript:;" hidefocus="true" rel="nofollow" class="js_ball" data-value="2">02</a>
+		</li>
+		<li>
+			<a href="javascript:;" hidefocus="true" rel="nofollow" class="js_ball" data-value="3">03</a>
+		</li>
+		<li>
+			<a href="javascript:;" hidefocus="true" rel="nofollow" class="js_ball" data-value="4">04</a>
+		</li>
+		<li>
+			<a href="javascript:;" hidefocus="true" rel="nofollow" class="js_ball" data-value="5">05</a>
+		</li>
+		<li>
+			<a href="javascript:;" hidefocus="true" rel="nofollow" class="js_ball" data-value="6">06</a>
+		</li>
+		<li>
+			<a href="javascript:;" hidefocus="true" rel="nofollow" class="js_ball" data-value="7">07</a>
+		</li>
+		<li>
+			<a href="javascript:;" hidefocus="true" rel="nofollow" class="js_ball" data-value="8">08</a>
+		</li>
+		<li>
+			<a href="javascript:;" hidefocus="true" rel="nofollow" class="js_ball" data-value="9">09</a>
+		</li>
+		<li>
+			<a href="javascript:;" hidefocus="true" rel="nofollow" class="js_ball" data-value="10">10</a>
+		</li>
+		<li>
+			<a href="javascript:;" hidefocus="true" rel="nofollow" class="js_ball" data-value="11">11</a>
+		</li>
+		<li>
+			<a href="javascript:;" hidefocus="true" rel="nofollow" class="js_ball" data-value="12">12</a>
+		</li>
+		<li>
+			<a href="javascript:;" hidefocus="true" rel="nofollow" class="js_ball" data-value="13">13</a>
+		</li>
+		<li>
+			<a href="javascript:;" hidefocus="true" rel="nofollow" class="js_ball" data-value="14">14</a>
+		</li>
+		<li>
+			<a href="javascript:;" hidefocus="true" rel="nofollow" class="js_ball" data-value="15">15</a>
+		</li>
+		<li>
+			<a href="javascript:;" hidefocus="true" rel="nofollow" class="js_ball" data-value="16">16</a>
+		</li>
+		<li>
+			<a href="javascript:;" hidefocus="true" rel="nofollow" class="js_ball" data-value="17">17</a>
+		</li>
+		<li>
+			<a href="javascript:;" hidefocus="true" rel="nofollow" class="js_ball" data-value="18">18</a>
+		</li>
+		<li>
+			<a href="javascript:;" hidefocus="true" rel="nofollow" class="js_ball" data-value="19">19</a>
+		</li>
+		<li>
+			<a href="javascript:;" hidefocus="true" rel="nofollow" class="js_ball" data-value="20">20</a>
+		</li>
+		<li>
+			<a href="javascript:;" hidefocus="true" rel="nofollow" class="js_ball" data-value="21">21</a>
+		</li>
+		<li>
+			<a href="javascript:;" hidefocus="true" rel="nofollow" class="js_ball" data-value="22">22</a>
+		</li>
+		<li>
+			<a href="javascript:;" hidefocus="true" rel="nofollow" class="js_ball" data-value="23">23</a>
+		</li>
+		<li>
+			<a href="javascript:;" hidefocus="true" rel="nofollow" class="js_ball" data-value="24">24</a>
+		</li>
+		<li>
+			<a href="javascript:;" hidefocus="true" rel="nofollow" class="js_ball" data-value="25">25</a>
+		</li>
+		<li>
+			<a href="javascript:;" hidefocus="true" rel="nofollow" class="js_ball" data-value="26">26</a>
+		</li>
+		<li>
+			<a href="javascript:;" hidefocus="true" rel="nofollow" class="js_ball" data-value="27">27</a>
+		</li>
+		<li>
+			<a href="javascript:;" hidefocus="true" rel="nofollow" class="js_ball" data-value="28">28</a>
+		</li>
+		<li>
+			<a href="javascript:;" hidefocus="true" rel="nofollow" class="js_ball" data-value="29">29</a>
+		</li>
+		<li>
+			<a href="javascript:;" hidefocus="true" rel="nofollow" class="js_ball" data-value="30">30</a>
+		</li>
+		<li>
+			<a href="javascript:;" hidefocus="true" rel="nofollow" class="js_ball" data-value="31">31</a>
+		</li>
+		<li>
+			<a href="javascript:;" hidefocus="true" rel="nofollow" class="js_ball" data-value="32">32</a>
+		</li>
+		<li>
+			<a href="javascript:;" hidefocus="true" rel="nofollow" class="js_ball" data-value="33">33</a>
+		</li>
+	</ul>
+		</div>
+		<div class="blueBallBox">
+	<ul class="clearfix">
+		<li>
+			<a href="javascript:;" hidefocus="true" rel="nofollow" class="js_ball" data-value="1">01</a>
+		</li>
+		<li>
+			<a href="javascript:;" hidefocus="true" rel="nofollow" class="js_ball" data-value="2">02</a>
+		</li>
+		<li>
+			<a href="javascript:;" hidefocus="true" rel="nofollow" class="js_ball" data-value="3">03</a>
+		</li>
+		<li>
+			<a href="javascript:;" hidefocus="true" rel="nofollow" class="js_ball" data-value="4">04</a>
+		</li>
+		<li>
+			<a href="javascript:;" hidefocus="true" rel="nofollow" class="js_ball" data-value="5">05</a>
+		</li>
+		<li>
+			<a href="javascript:;" hidefocus="true" rel="nofollow" class="js_ball" data-value="6">06</a>
+		</li>
+		<li>
+			<a href="javascript:;" hidefocus="true" rel="nofollow" class="js_ball" data-value="7">07</a>
+		</li>
+		<li>
+			<a href="javascript:;" hidefocus="true" rel="nofollow" class="js_ball" data-value="8">08</a>
+		</li>
+		<li>
+			<a href="javascript:;" hidefocus="true" rel="nofollow" class="js_ball" data-value="9">09</a>
+		</li>
+		<li>
+			<a href="javascript:;" hidefocus="true" rel="nofollow" class="js_ball" data-value="10">10</a>
+		</li>
+		<li>
+			<a href="javascript:;" hidefocus="true" rel="nofollow" class="js_ball" data-value="11">11</a>
+		</li>
+		<li>
+			<a href="javascript:;" hidefocus="true" rel="nofollow" class="js_ball" data-value="12">12</a>
+		</li>
+		<li>
+			<a href="javascript:;" hidefocus="true" rel="nofollow" class="js_ball" data-value="13">13</a>
+		</li>
+		<li>
+			<a href="javascript:;" hidefocus="true" rel="nofollow" class="js_ball" data-value="14">14</a>
+		</li>
+		<li>
+			<a href="javascript:;" hidefocus="true" rel="nofollow" class="js_ball" data-value="15">15</a>
+		</li>
+		<li>
+			<a href="javascript:;" hidefocus="true" rel="nofollow" class="js_ball" data-value="16">16</a>
+		</li>
+	</ul>
+</div>
+	<div>
+		<p class="betBtns">
+        	<span id="normalBtnBox"><a data-bet-type="1" herf="javascript:;" rel="nofollow" class="betting_Btn" title="立即投注"></a></span>
+        </p>
+	</div>
+	<div id="warnDiv" class="alert alert-danger alert-dismissable hide">
+            <button type="button" class="close" data-dismiss="alert"
+                    aria-hidden="true">
+                &times;
+            </button>
+				<SPAN id="warnMsg">
+                </SPAN>
+    </div>
+ 
+
+<script >
+	$('#example').popover();
+	var blueBallArr = [];
+	var redBallArr = [];
+	$(function(){
+		$(".blueBallBox a").click(function(){
+			if($(this).hasClass("active")) {
+				$(this).removeClass("active");
+				blueBallArr.remove($(this).html());
+			} else {
+				$(this).addClass("active");
+				blueBallArr.push($(this).html());
+			}
+			console.log("blueballs:" + blueBallArr);
+		})
+		$(".redBallBox a").click(function(){
+			if($(this).hasClass("active")) {
+				$(this).removeClass("active");
+				redBallArr.remove($(this).html());
+			} else {
+				$(this).addClass("active");
+				redBallArr.push($(this).html());
+			}
+			console.log("redballs:" + redBallArr);
+		})
+		
+		$(".betting_Btn").click(function(){
+			submit();
+		})
+	})
+	
+	Array.prototype.remove=function(obj){ 
+        for(var i =0;i <this.length;i++){ 
+            var temp = this[i]; 
+            if(temp == obj){ 
+                for(var j = i;j <this.length;j++){ 
+					this[j]=this[j+1]; 
+                } 
+                this.length = this.length-1; 
+            } 
+        } 
+    }
+	
+	function submit () {
+		if(!checkBallsNum()) {
+			return;
+		}
+		console.log(redBallArr);
+		$.post("${rc.contextPath}/addSsq.json",{redNums:redBallArr.toString(),blueNum:blueBallArr.toString()},function(data){
+			if (data.returnCode == "1") {
+    			alert("data");
+			}
+		},"json");
+	
+	}
+	function checkBallsNum () {
+		if(redBallArr.length > 6) {
+			alert("红球不得超过6个");
+			return false;
+		}
+		if(blueBallArr.length > 1) {
+			alert("蓝球不得超过1个");
+			return false;
+		}
+		return true;
+	}
+	
+	
+	
+	
+</script>
+	
+		

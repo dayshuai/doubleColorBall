@@ -1,0 +1,5 @@
+<!DOCTYPE html>
+<html>
+#parse("header/header.vm")
+$screen_content
+</html>

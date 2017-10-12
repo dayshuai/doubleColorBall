@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.doublecolorball.mapper.DoublecolorballInfoDAO">
+	
+	<resultMap type="com.doublecolorball.model.DoubleColorBallInfo" id="BaseResultMap">
+				<id column="id" property="id" />
+				<result column="red_nums" property="redNums"/>
+				<result column="blue_num" property="blueNum"/>
+				<result column="open_date" property="openDate"/>
+				<result column="open_no" property="openNo"/>
+				<result column="all_nums" property="allNums"/>
+				<result column="sale_num" property="saleNum"/>
+				<result column="first_num" property="firstGradeNum"/>
+				<result column="second_num" property="secondGradeNum"/>
+	</resultMap>
+	
+	<sql id="Base_Column_List">
+		id,red_nums,blue_num,open_date,open_no,all_nums,sale_num,first_num,second_num
+	</sql>
+	
+	<sql id="Where_Column_List">
+		<if test="redNums!=null and redNums!=''">
+			AND red_nums = #{redNums}
+		</if>
+		<if test="blueNum!=null and blueNum!=''">
+			AND blue_num = #{blueNum}
+		</if>
+		<if test="openDate!=null and openDate!=''">
+			AND open_date = #{openDate}
+		</if>
+		<if test="openNo!=null and openNo!=''">
+			AND open_no = #{openNo}
+		</if>
+		<if test="allNums!=null and allNums!=''">
+			AND all_nums = #{allNums}
+		</if>
+		<if test="saleNum!=null and saleNum!=''">
+			AND sale_num = #{saleNum}
+		</if>
+		<if test="firstGradeNum!=null and firstGradeNum!=''">
+			AND first_num = #{firstGradeNum}
+		</if>
+		<if test="secondGradeNum!=null and secondGradeNum!=''">
+			AND second_num = #{secondGradeNum}
+		</if>
+  	</sql>
+  	
+  	<select id="findAll" resultMap="BaseResultMap" parameterType="com.doublecolorball.model.DoubleColorBallInfo">
+		SELECT <include refid="Base_Column_List"/> FROM doublecolorball_info 
+		 where 1 = 1
+    	<include refid="Where_Column_List" />
+    	order by open_date desc 
+	</select>
+	
+	<select id="selectByOpenNo" resultMap="BaseResultMap" parameterType="java.lang.String">
+		SELECT <include refid="Base_Column_List"/> FROM doublecolorball_info 
+		 where open_no = #{openNo}
+	</select>
+	
+	<select id="selectMaxOpenNo" resultType="java.lang.String">
+		SELECT open_no FROM doublecolorball_info 
+		order by open_date desc limit 1
+	</select>
+	
+	
+</mapper>

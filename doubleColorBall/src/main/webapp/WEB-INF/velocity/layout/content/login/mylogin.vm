@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en" class="login-content" data-ng-app="materialAdmin">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Author" content="">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>Admin</title>
+</head>
+<body class="login-content" data-ng-controller="loginCtrl as lctrl">
+
+<div class="lc-block" id="l-login" data-ng-class="{'toggled':lctrl.login === 1}">
+    <h1 class="lean">SBlog</h1>
+
+    <form action="/login" method="post" id="login">
+        <div class="input-group m-b-20">
+    		<span class="input-group-addon">
+    			<i class="zmdi zmdi-account"></i>
+    		</span>
+
+            <div class="fg-line">
+                <input type="text" name="username" class="form-control" placeholder="用户名称" />
+            </div>
+        </div>
+
+        <div class="input-group m-b-20">
+    		<span class="input-group-addon">
+    			<i class="zmdi zmdi-key"></i>
+    		</span>
+
+            <div class="fg-line">
+                <input type="password" name="password" class="form-control" placeholder="用户密码" />
+            </div>
+        </div>
+
+        <div class="input-group m-b-20">
+    		<span class="input-group-addon">
+    			<i class="zmdi zmdi-image-o"></i>
+    		</span>
+
+            <div class="fg-line">
+                <input type="text" name="code" class="form-control" placeholder="验证码" />
+            </div>
+
+        </div>
+        <div>
+            <img src="/login/codeimg"/>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="checkbox zmdi-format-align-center">
+            <label>
+                <input type="checkbox" value="" name="remember"/>
+                <i class="input-helper">
+                    保持登录状态
+                </i>
+            </label>
+        </div>
+
+        <a onclick="document.getElementById('login').submit();" class="btn btn-login btn-danger btn-float">
+            <i class="zmdi zmdi-arrow-forward"></i>
+        </a>
+    </form>
+</div>
+
+
+</body>
+
+
+</html>

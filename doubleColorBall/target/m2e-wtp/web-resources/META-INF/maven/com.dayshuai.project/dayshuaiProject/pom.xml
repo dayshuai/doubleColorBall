@@ -1,0 +1,207 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.dayshuai.project</groupId>
+  <artifactId>dayshuaiProject</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>dayshuaiProject Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <quartz.version>2.2.1</quartz.version>
+        <!-- spring版本号 -->  
+        <spring.version>3.2.8.RELEASE</spring.version>  
+        <!-- log4j日志文件管理包版本 -->  
+        <slf4j.version>1.6.6</slf4j.version>  
+        <log4j.version>1.2.12</log4j.version>  
+        <!-- junit版本号 -->  
+        <junit.version>4.10</junit.version>  
+        <!-- mybatis版本号 -->  
+        <mybatis.version>3.2.4</mybatis.version>
+  </properties>
+
+  <dependencies>
+   		<!-- 添加Spring依赖 -->  
+        <dependency>  
+            <groupId>org.springframework</groupId>  
+            <artifactId>spring-core</artifactId>  
+            <version>${spring.version}</version>  
+        </dependency>  
+        <dependency>  
+            <groupId>org.springframework</groupId>  
+            <artifactId>spring-webmvc</artifactId>  
+            <version>${spring.version}</version>  
+        </dependency>  
+        <dependency>  
+            <groupId>org.springframework</groupId>  
+            <artifactId>spring-context</artifactId>  
+            <version>${spring.version}</version>  
+        </dependency>  
+        <dependency>  
+            <groupId>org.springframework</groupId>  
+            <artifactId>spring-context-support</artifactId>  
+            <version>${spring.version}</version>  
+        </dependency>  
+        <dependency>  
+            <groupId>org.springframework</groupId>  
+            <artifactId>spring-aop</artifactId>  
+            <version>${spring.version}</version>  
+        </dependency>  
+        <dependency>  
+            <groupId>org.springframework</groupId>  
+            <artifactId>spring-aspects</artifactId>  
+            <version>${spring.version}</version>  
+        </dependency>  
+        <dependency>  
+            <groupId>org.springframework</groupId>  
+            <artifactId>spring-tx</artifactId>  
+            <version>${spring.version}</version>  
+        </dependency>  
+        <dependency>  
+            <groupId>org.springframework</groupId>  
+            <artifactId>spring-jdbc</artifactId>  
+            <version>${spring.version}</version>  
+        </dependency>  
+        <dependency>  
+            <groupId>org.springframework</groupId>  
+            <artifactId>spring-web</artifactId>  
+            <version>${spring.version}</version>  
+        </dependency> 
+        
+        
+       
+        <!-- 日志文件管理包 -->  
+        <!-- log start -->  
+        <dependency>  
+            <groupId>log4j</groupId>  
+            <artifactId>log4j</artifactId>  
+            <version>${log4j.version}</version>  
+        </dependency>  
+        <dependency>  
+            <groupId>org.slf4j</groupId>  
+            <artifactId>slf4j-api</artifactId>  
+            <version>${slf4j.version}</version>  
+        </dependency>  
+        <dependency>  
+            <groupId>org.slf4j</groupId>  
+            <artifactId>slf4j-log4j12</artifactId>  
+            <version>${slf4j.version}</version>  
+        </dependency>  
+        <!-- log end -->
+         <!--mybatis依赖 -->  
+        <dependency>  
+            <groupId>org.mybatis</groupId>  
+            <artifactId>mybatis</artifactId>  
+            <version>${mybatis.version}</version>  
+        </dependency>  
+  
+        <!-- mybatis/spring包 -->  
+        <dependency>  
+            <groupId>org.mybatis</groupId>  
+            <artifactId>mybatis-spring</artifactId>  
+            <version>1.2.0</version>  
+        </dependency>  
+  
+        <!-- mysql驱动包 -->  
+        <dependency>  
+            <groupId>mysql</groupId>  
+            <artifactId>mysql-connector-java</artifactId>  
+            <version>5.1.29</version>  
+        </dependency>
+        <dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>javax.mail-api</artifactId>
+			<version>1.5.3</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.mail</groupId>
+			<artifactId>javax.mail</artifactId>
+			<version>1.5.3</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.activation</groupId>
+			<artifactId>activation</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/commons-beanutils/commons-beanutils -->
+		<dependency>
+		    <groupId>commons-beanutils</groupId>
+		    <artifactId>commons-beanutils</artifactId>
+		    <version>1.9.3</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/log4j/log4j -->
+		<dependency>
+		    <groupId>log4j</groupId>
+		    <artifactId>log4j</artifactId>
+		    <version>1.2.17</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.codehaus.jackson/jackson-core-asl -->
+		<dependency>
+		    <groupId>org.codehaus.jackson</groupId>
+		    <artifactId>jackson-core-asl</artifactId>
+		    <version>1.9.12</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.codehaus.jackson/jackson-mapper-lgpl -->
+		<dependency>
+		    <groupId>org.codehaus.jackson</groupId>
+		    <artifactId>jackson-mapper-lgpl</artifactId>
+		    <version>1.9.12</version>
+		</dependency>
+
+		  <dependency>  
+            <groupId>org.apache.velocity</groupId>  
+            <artifactId>velocity</artifactId>  
+            <version>1.7</version>  
+        </dependency>  
+        <dependency>  
+            <groupId>org.apache.velocity</groupId>  
+            <artifactId>velocity-tools</artifactId>  
+            <version>2.0</version>  
+        </dependency> 
+        
+        
+         <dependency>
+            <groupId>us.codecraft</groupId>
+            <version>0.4.3</version>
+            <artifactId>webmagic-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>us.codecraft</groupId>
+            <version>0.4.3</version>
+            <artifactId>webmagic-extension</artifactId>
+        </dependency> 
+        
+        
+		<dependency>  
+		    <groupId>com.github.pagehelper</groupId>  
+		    <artifactId>pagehelper</artifactId>  
+		    <version>4.0.0</version>  
+		</dependency> 
+		
+		
+		  
+  </dependencies>
+	<build>
+        <finalName>dayshuaiProject</finalName>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <includes>
+                        <include>**/*Tests.java</include>
+                    </includes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

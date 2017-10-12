@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.doublecolorball.mapper.UserSsqDAO">
+	
+	<resultMap type="com.doublecolorball.model.UserSsq" id="BaseResultMap">
+				<id column="id" property="id" />
+				<result column="red_nums" property="redNums"/>
+				<result column="blue_num" property="blueNum"/>
+				<result column="open_no" property="openNo"/>
+				<result column="create_date" property="createDate"/>
+				<result column="user_id" property="userId"/>
+				<result column="count" property="count"/>
+	</resultMap>
+	
+	<sql id="Base_Column_List">
+		id,red_nums,blue_num,open_no,create_date,user_id,count
+	</sql>
+	
+	<sql id="Where_Column_List">
+		<if test="redNums!=null and redNums!=''">
+			AND red_nums = #{redNums}
+		</if>
+		<if test="blueNum!=null and blueNum!=''">
+			AND blue_num = #{blueNum}
+		</if>
+		<if test="openNo!=null and openNo!=''">
+			AND open_no = #{openNo}
+		</if>
+		<if test="createDate!=null and createDate!=''">
+			AND create_date = #{createDate}
+		</if>
+		<if test="userId!=null and userId!=''">
+			AND user_id = #{userId}
+		</if>
+		<if test="count!=null and count!=''">
+			AND count = #{count}
+		</if>
+  	</sql>
+	
+	<insert id="insert" parameterType="com.doublecolorball.model.UserSsq" useGeneratedKeys = "true" keyProperty = "id">
+		INSERT INTO user_ssq (red_nums,blue_num,open_no,create_date,user_id,count)
+		VALUES (#{redNums},#{blueNum},#{openNo},#{createDate},#{userId},#{count})
+	</insert>
+	
+	<insert id="insertSelective" parameterType="com.doublecolorball.model.UserSsq" useGeneratedKeys = "true" keyProperty = "id">
+		INSERT INTO user_ssq 
+		<trim prefix="(" suffix=")" suffixOverrides="," >
+					<if test="redNums != null" >
+		        		red_nums,
+		      		</if>
+					<if test="blueNum != null" >
+		        		blue_num,
+		      		</if>
+					<if test="openNo != null" >
+		        		open_no,
+		      		</if>
+		        		create_date,
+					<if test="userId != null" >
+		        		user_id,
+		      		</if>
+					<if test="count != null" >
+		        		count,
+		      		</if>
+	    </trim>
+    	<trim prefix="values (" suffix=")" suffixOverrides="," >
+                	<if test="redNums != null">
+					#{redNums},
+					</if>
+                	<if test="blueNum != null">
+					#{blueNum},
+					</if>
+                	<if test="openNo != null">
+					#{openNo},
+					</if>
+					sysdate(),
+                	<if test="userId != null">
+					#{userId},
+					</if>
+                	<if test="count != null">
+					#{count},
+					</if>
+		</trim>
+	</insert>
+	
+	<update id="updateById" parameterType="com.doublecolorball.model.UserSsq">
+		UPDATE user_ssq
+ 		SET red_nums=#{redNums},blue_num=#{blueNum},open_no=#{openNo},create_date=#{createDate},user_id=#{userId},count=#{count}
+		WHERE id=#{id}
+	</update>
+	
+	<update id="updateIdKeySelective" parameterType="com.doublecolorball.model.UserSsq">
+		UPDATE user_ssq
+ 		<set>
+ 			<if test="redNums != null" >
+ 				red_nums=#{redNums},
+ 			</if>
+ 			<if test="blueNum != null" >
+ 				blue_num=#{blueNum},
+ 			</if>
+ 			<if test="openNo != null" >
+ 				open_no=#{openNo},
+ 			</if>
+ 			<if test="createDate != null" >
+ 				create_date=#{createDate},
+ 			</if>
+ 			<if test="userId != null" >
+ 				user_id=#{userId},
+ 			</if>
+ 			<if test="count != null" >
+ 				count=#{count},
+ 			</if>
+ 			<if test="grade != null" >
+ 				grade=#{grade},
+ 			</if>
+ 		</set>
+		WHERE id=#{id}
+	</update>
+
+	<delete id="deleteById" parameterType="java.lang.Long">
+		DELETE FROM user_ssq WHERE id=#{value}
+	</delete>
+
+	<select id="selectById" resultMap="BaseResultMap" parameterType="java.lang.Long">
+		SELECT <include refid="Base_Column_List"/> FROM user_ssq WHERE id=#{value} LIMIT 0,1
+	</select>
+	
+	<select id="queryNoGradeBall" resultMap="BaseResultMap" >
+		SELECT * FROM user_ssq ssq  WHERE ssq.grade is null and exists (select 1 from doublecolorball_info info where ssq.open_no = info.open_no) 
+	</select>
+	
+</mapper>

@@ -1,0 +1,67 @@
+#foreach($ball in $doubleColorBalls.list)
+<div class="article well clearfix">
+    <!-- PC显示 -->
+    <section class="hidden-xs">
+        <div class="title-article">
+			<h1>开奖日期:${ball.openDate}  期号:${ball.openNo}</h1>
+        </div>
+        <div class="tag-article">
+			#foreach($redball in $ball.redNumArr)
+					<span class="myredball">${redball}</span>
+			#end
+            <span class="myblueball">${ball.blueNum}</span>
+            <span class="label">销售额：${ball.saleNum}</span>
+            <span class="label">一等奖个数：${ball.firstGradeNum}</span>
+            <span class="label">二等奖个数：${ball.secondGradeNum}</span>
+        </div>
+    </section>
+    <!-- 移动设备-->
+    <section class="visible-xs  visible-sm">
+
+        <div class="title-article">
+			<h4>开奖日期:${ball.openDate}  期号:${ball.openNo}</h4>
+        </div>
+        <div class="tag-article">
+			#foreach($redball in $ball.redNumArr)
+					<span class="myredball">${redball}</span>
+			#end
+            <span class="myblueball">${ball.blueNum}</span>
+            <span class="label">销售额：${ball.saleNum}</span>
+            <span class="label">一等奖个数：${ball.firstGradeNum}</span>
+            <span class="label">二等奖个数：${ball.secondGradeNum}</span>
+        </div>
+    </section>
+</div>
+#end
+
+#if(!${search})
+<div class="page-nav" align="center">
+    <ul class="pagination">
+        <li><a href="$rc.contextPath/list?pageIndex=1">首页</a></li>
+
+        #if(${doubleColorBalls.prePage}!=0)
+            <li><a href="$rc.contextPath/list?pageIndex=${doubleColorBalls.prePage}">上一页</a></li>
+        #else
+            <li class="disabled"><a href="">上一页</a></li>
+        #end
+
+        #if(${doubleColorBalls.prePage}!=0)
+            <li><a href="$rc.contextPath/list?pageIndex=${doubleColorBalls.prePage}">${doubleColorBalls.prePage}</a></li>
+        #end
+
+        <li class="active"><a href="$rc.contextPath/list?pageIndex=${doubleColorBalls.pageNum}">${doubleColorBalls.pageNum}</a></li>
+
+        #if(${doubleColorBalls.nextPage}!=0)
+            <li><a href="$rc.contextPath/list?pageIndex=${doubleColorBalls.nextPage}">${doubleColorBalls.nextPage}</a></li>
+        #end
+
+        #if(${doubleColorBalls.nextPage}!= 0)
+            <li><a href="$rc.contextPath/list?pageIndex=${doubleColorBalls.nextPage}">下一页</a></li>
+        #else
+            <li class="disabled"><a href="">下一页</a></li>
+        #end
+        <li><a href="$rc.contextPath/list?pageIndex=${doubleColorBalls.pages}">末页</a></li>
+    </ul>
+</div>
+#end
+

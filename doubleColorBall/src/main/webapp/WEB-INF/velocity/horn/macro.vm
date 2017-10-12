@@ -1,0 +1,5 @@
+#macro(jscode $params)
+	<script >
+		$params
+	</script >
+#end

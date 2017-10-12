@@ -1,0 +1,22 @@
+		.myredball{
+			display: block;
+			float: left;
+            margin-right: 5px;
+            background: url(../image/ssqpd_40.jpg) no-repeat top left;
+            width: 21px;
+            padding-top: 5px;
+            text-align: center;
+            color: #fff;
+            font-weight: bold;
+		}
+		.myblueball{
+			display: block;
+			float: left;
+            margin-right: 5px;
+            background: url(../image/ssqpd_41.jpg) no-repeat top left;
+            width: 21px;
+            padding-top: 5px;
+            text-align: center;
+            color: #fff;
+            font-weight: bold;
+		}
