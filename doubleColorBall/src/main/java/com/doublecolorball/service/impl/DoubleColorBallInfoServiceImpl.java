@@ -3,6 +3,8 @@ package com.doublecolorball.service.impl;
 import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.subject.Subject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +15,7 @@ import com.doublecolorball.mapper.UserSsqDAO;
 import com.doublecolorball.model.DoubleColorBallInfo;
 import com.doublecolorball.model.UserSsq;
 import com.doublecolorball.service.DoublecolorballInfoService;
+import com.doublecolorball.shiro.SessionUser;
 import com.doublecolorball.utils.ValidBall;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -46,7 +49,7 @@ public class DoubleColorBallInfoServiceImpl implements DoublecolorballInfoServic
 			try {
 				validBall(ssq);
 			} catch (Exception e) {
-				logger.error("查询中奖信息更新状态失败,error:{}", ssq);
+				logger.error("查询中奖信息更新状态失败,error:{}", ssq,e);
 			}
 		}
 	}

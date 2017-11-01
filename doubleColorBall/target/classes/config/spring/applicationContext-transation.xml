@@ -35,11 +35,15 @@
 	 		<tx:method name="get*" propagation="SUPPORTS" read-only="true"/>
 	 	</tx:attributes>
 	 </tx:advice>
-	 
 	 <!-- aop -->
 	 <aop:config>
 	 	<aop:advisor advice-ref="txAdvice"
 	 				 pointcut="execution(* com.doublecolorball.service.impl.*.*(..))"/>
 	 </aop:config>
+	 
+	<tx:annotation-driven transaction-manager="transactionManager" />
+	<aop:aspectj-autoproxy />
+	 
+	 
 	
 </beans>

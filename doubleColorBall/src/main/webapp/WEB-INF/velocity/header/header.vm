@@ -1,5 +1,4 @@
 <head>
-	#if($cssStyle!='admin')
     	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title></title>
@@ -9,13 +8,17 @@
 		<link rel="stylesheet" href="$rc.contextPath/resources/css/doublecolor.css"/>
 		<link rel="stylesheet" href="$rc.contextPath/resources/css/common.css"/>
 		<link rel="stylesheet" href="$rc.contextPath/resources/css/base.css"/>
+		<link rel="stylesheet" href="$rc.contextPath/resources/css/loginbase.css"/>
+		<link rel="stylesheet" href="$rc.contextPath/resources/css/login.css"/>
 		<link rel="stylesheet" href="$rc.contextPath/resources/css/core.css"/>
+		<link rel="stylesheet" href="$rc.contextPath/resources/css/userstyle.css"/>
 		<link rel="stylesheet" href="$rc.contextPath/resources/css/ssq.css"/>
 		<link rel="stylesheet" href="$rc.contextPath/resources/css/history.css"/>
 		<link rel="stylesheet" href="$rc.contextPath/resources/css/luckyBuy.css"/>
 		<script src="$rc.contextPath/static/user/widget/jquery/jquery.min.js"></script>
 		<script src="$rc.contextPath/static/user/widget/bootstrap/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="$rc.contextPath/static/user/css/article.css" rel="stylesheet">
+		<script src="$rc.contextPath/static/user/widget/bootstrap/js/bootstrap.min.js"></script>
+			
     	
 		
 		
@@ -25,29 +28,4 @@
                 padding-bottom: 40px;
             }
         </style>
-	#end
-	
-	#if($cssStyle=='admin')
-		<!-- admin -->
-		<link href="$rc.contextPath/static/adminLTE/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    	
-    	<link rel="stylesheet" href="$rc.contextPath/static/adminLTE/bootstrap/css/bootstrap.min.css">
-        <!-- Theme style -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    
-        <link rel="stylesheet" href="$rc.contextPath/static/adminLTE/dist/css/AdminLTE.min.css">
-        <!-- AdminLTE Skins. Choose a skin from the css/skins
-             folder instead of downloading all of them to reduce the load. -->
-        <link rel="stylesheet" href="$rc.contextPath/static/adminLTE/dist/css/skins/_all-skins.min.css">
-        <link rel="stylesheet" href="$rc.contextPath/static/user/editor/css/editormd.css"/>
-		<script src="$rc.contextPath/static/user/editor/js/jquery.min.js"></script>
-		 <!-- jQuery 2.1.4 -->
-        <script src="$rc.contextPath/static/user/widget/jquery/jQuery-2.1.4.min.js"></script>
-        <!-- Bootstrap 3.3.5 -->
-        <script src="$rc.contextPath/static/adminLTE/bootstrap/js/bootstrap.min.js"></script>
-        <!-- AdminLTE App -->
-        <script src="$rc.contextPath/static/adminLTE/dist/js/app.min.js"></script>
-		
-		<script src="$rc.contextPath/static/user/editor/js/editormd.min.js"></script>
-	#end
 </head>

@@ -3,17 +3,18 @@
 <mapper namespace="com.doublecolorball.mapper.UserSsqDAO">
 	
 	<resultMap type="com.doublecolorball.model.UserSsq" id="BaseResultMap">
-				<id column="id" property="id" />
-				<result column="red_nums" property="redNums"/>
-				<result column="blue_num" property="blueNum"/>
-				<result column="open_no" property="openNo"/>
-				<result column="create_date" property="createDate"/>
-				<result column="user_id" property="userId"/>
-				<result column="count" property="count"/>
+			<id column="id" property="id" />
+			<result column="red_nums" property="redNums"/>
+			<result column="blue_num" property="blueNum"/>
+			<result column="open_no" property="openNo"/>
+			<result column="create_date" property="createDate"/>
+			<result column="user_id" property="userId"/>
+			<result column="count" property="count"/>
+			<result column="grade" property="grade"/>
 	</resultMap>
 	
 	<sql id="Base_Column_List">
-		id,red_nums,blue_num,open_no,create_date,user_id,count
+		id,red_nums,blue_num,open_no,create_date,user_id,count,grade
 	</sql>
 	
 	<sql id="Where_Column_List">
@@ -128,4 +129,11 @@
 		SELECT * FROM user_ssq ssq  WHERE ssq.grade is null and exists (select 1 from doublecolorball_info info where ssq.open_no = info.open_no) 
 	</select>
 	
+	
+	<select id="findUserSsq" resultMap="BaseResultMap" parameterType="com.doublecolorball.model.UserSsq">
+		SELECT <include refid="Base_Column_List"/> FROM user_ssq 
+		 where 1 = 1
+    	<include refid="Where_Column_List" />
+    	order by create_date desc 
+	</select>
 </mapper>

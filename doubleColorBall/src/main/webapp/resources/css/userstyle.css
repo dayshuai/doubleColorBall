@@ -1,0 +1,78 @@
+﻿/*bopweb样式*/
+
+.m_sldtop {
+    box-shadow: none;
+    margin-bottom: 50px;
+}
+.m_module_1 {
+    min-height: 64px;
+    background: #fff;
+    padding: 0 20px;
+    border: 0px;
+    margin-top: 30px;
+}
+.m_tab, .m_module_1, .m_module_2 {
+    border-radius: 1px;
+}
+
+.ml20 {
+    margin-left: 0px;
+}
+.m_sld1 {
+    background: url(../classic/img/m_sld1.png) no-repeat 2px 2px;
+    width: 20%;
+}
+.m_sld {
+    margin: 10px 0;
+    padding-left: 52px;
+    margin-left: 20px;
+    height: 44px;
+}
+.leftd {
+    float: left;
+}
+
+li {
+    display: list-item;
+    list-style-type: none;
+    text-align: -webkit-match-parent;
+}
+
+li.leftd p{
+	line-height: 24px;
+    margin: 0;	
+}
+.m_sld2 {
+    background: url(../classic/img/m_sld2.png) no-repeat 2px 2px;
+    width: 20%;
+}
+.m_sld4 {
+    background: url(../classic/img/m_sld4.png) no-repeat 2px 2px;
+    width: 20%;
+}
+.m_sld3 {
+    background: url(../classic/img/m_sld3.png) no-repeat 2px 2px;
+    width: 20%;
+}
+.m_user_img{
+   width:120px;
+   height:150px;
+   margin-left:auto;
+   margin-right:auto;
+   background:url(../classic/img/client.png);
+}
+.m_count_icon{
+	width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: rgb(234, 79, 79);
+    position: absolute;
+    top: 175px;
+    left: 115px;
+    z-index: 999;
+    line-height: 24px;
+    padding-left: 7px;
+    font-weight: bold;
+    color: #fff;
+	
+}

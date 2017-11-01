@@ -1,0 +1,181 @@
+<script type="text/javascript" src="$rc.contextPath/resources/js/security/security.js"></script>
+<div class="p-login">
+    <div class="login-head">
+        <div class="page-top-logo clear">
+            <div class="fn-left page-logo">
+                <a href="#" ></a>
+            </div>
+        </div>
+    </div>
+	<div class="login-box animated zoomIn">
+        <div class="login-bg"></div>
+		<div class="login-content">
+            <div class="login-title"></div>
+				<form method="post" action="submitLogin.htm" id="loginForm">
+    				<div class="m-tip-box m-tip-error" #if("$!errorInfo"!="")style="display: block" #else style="display: none" #end>
+						<span><i class="fa fa-close"></i></span> <span id="msg">$!{errorInfo}</span>
+    				</div>
+					<ul>
+						<li>
+							<input type="text" id="user_name" name="user_name" class="login-input user-name" placeholder="请输入用户名" value="$!userName" />
+						</li>
+						<li>
+							<input  id="pass_word" type="password" name="pass_word" class="login-input password" placeholder="请输入密码" value="$!password"/>
+						</li>
+						<li class="aucode-li">
+							<input type="text" id="check_code" name="check_code" class="login-input aucode" placeholder="请输入验证码" value="$!checkcode"/>
+							<img id='checkCode' onclick='changeCode()' class="check-img" />
+						</li>
+                    </ul>
+    				<div class="form-submit">
+    					<button type="button" onclick="loginSubmit()" class="login-btn" id="btnLogin">登　录</button>
+                    </div>
+				</form>
+        </div>
+	</div>
+</div>
+<script type="text/javascript">
+	##如果是子页面访问，则父页面跳转登录页面，用于session过期机制
+	$(function(){
+		if(self!=top){
+			parent.window.location.replace(window.location.href);
+		}
+		changeCode();
+	});
+	$(document).ready(function(){
+		
+		var patrn=/$!{regexPwd}/;
+	  	$("#user_name").blur(function(){
+	  			if($(this).val()==""){
+	  				showOrHideMsg(true,"用户ID不能为空");
+	  			}else{
+	  				showOrHideMsg(false,"");
+	  			}
+	  	});
+	  	$("#pass_word").blur(function(){
+	  			if($(this).val()==""){
+	  				showOrHideMsg(true,"密码不能为空");
+	  			}else{
+	  				showOrHideMsg(false,"");
+	  			}
+				##if(!patrn.exec($(this).val())){
+				##	showOrHideMsg(true,"$!{warnPwd}");
+				##}
+	  	});
+		 $('#pass_word').bind('keypress',function(event){
+            if(event.keyCode == "13")    
+            {
+                if($(this).val()==""){
+	  				showOrHideMsg(true,"密码不能为空");
+	  			}else{
+	  				loginSubmit();
+	  			}
+            }
+        });
+	  	$("#check_code").blur(function(){
+	  			if($(this).val()==""){
+	  				showOrHideMsg(true,"验证码不能为空");
+	  			}else{
+	  				showOrHideMsg(false,"");
+	  			}
+	  	});
+	});
+
+	function changeCode(){
+		$('#checkCode').attr('src','$rc.contextPath/kaptcha.jpg?'+ Math.random());
+		
+	}
+	
+	var flag = true;
+	##验证码添加Enter事件
+	$('#check_code').keydown(function(e){
+		if(e.keyCode == 13){
+			e.stopPropagation();
+			loginSubmit();
+		}
+	})
+	function loginSubmit(){
+		var userName = $("#user_name").val();
+		userName=$.trim(userName);
+		var password = $("#pass_word").val();
+		var check_code = $("#check_code").val();
+		if(userName=='' || userName==null){
+			showOrHideMsg(true,"用户ID不能为空");
+			return false;
+		}else{
+			showOrHideMsg(false,"");
+		}
+
+		if(password=='' || password==null){
+			alert("密码不能为空");
+			return false;
+		}
+		if(check_code=='' || check_code==null){
+			alert("验证码不能为空");
+			return false;
+		}
+		if(flag){
+			$("#ckeckCode").val(check_code);
+			$("#btnLogin").text("正在登录...");
+			$("#btnLogin").attr("disabled", true);
+			$.getJSON("$rc.contextPath/login/getSecurityPublicKey.json", function(data) {
+			debugger;
+                    var publicKey = RSAUtils.getKeyPair(data.exponent, '', data.modulus);
+                    var params = {"loginName":userName, 
+                    			  "password": RSAUtils.encryptedString(publicKey, password), 
+                    			  "check_code":check_code};
+					loginOper(params);
+            });
+			
+		
+		}
+	}
+	
+	function loginOper(params) {
+		jQuery.ajax({
+			url:"$rc.contextPath/login/login.json",
+			async: false,
+            type: "POST",
+        	data: params, 
+			dataType: "json",
+            success : function(data) {
+				if (data.return_code==0) {
+					window.location.href='$rc.contextPath/ball/list.htm';
+					$("#btnLogin").text("正在登录...");
+					$("#btnLogin").attr("disabled",false);
+				} else {
+					alert(data.return_msg); 
+					changeCode();
+					$("#check_code").val('');
+					$("#btnLogin").text("登　录");
+					$("#btnLogin").attr("disabled",false);
+				}
+			},
+        	error: function(xhr, textStatus, errorThrown) {
+        		Horn.Msg.error("提示","连接服务器失败，请检查是否连接网络！"); 
+				$("#btnLogin").text("登　录");
+				$("#btnLogin").attr("disabled",false);
+        	}
+	   	})
+	}
+	
+	function showOrHideMsg(flag,msg){
+		if(flag){
+			flag = false;
+			$(".m-tip-box").show();
+			$("#msg").text(msg);
+		}else{
+			flag = true;
+			$(".m-tip-box").hide();
+			$("#msg").text("");
+		}
+	}
+   document.onkeydown=function(event){
+        var e = event || window.event || arguments.callee.caller.arguments[0];
+        if(e && e.keyCode==13){ ## enter 键
+			$("#h_msg_bg").hide();
+			$("#h_msg_floatdiv").hide();
+			$("#check_code").focus();
+        }
+    }; 
+</script>

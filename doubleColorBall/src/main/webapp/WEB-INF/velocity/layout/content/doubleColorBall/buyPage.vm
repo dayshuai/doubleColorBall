@@ -226,18 +226,19 @@
 		console.log(redBallArr);
 		$.post("${rc.contextPath}/addSsq.json",{redNums:redBallArr.toString(),blueNum:blueBallArr.toString()},function(data){
 			if (data.returnCode == "1") {
-    			alert("data");
+    			alert("购买成功");
+				window.location.href='${rc.contextPath}/ball/myDoubleColorBall.htm';
 			}
 		},"json");
 	
 	}
 	function checkBallsNum () {
-		if(redBallArr.length > 6) {
-			alert("红球不得超过6个");
+		if(redBallArr.length != 6) {
+			alert("请选择6个红球");
 			return false;
 		}
-		if(blueBallArr.length > 1) {
-			alert("蓝球不得超过1个");
+		if(blueBallArr.length != 1) {
+			alert("请选择1个蓝球");
 			return false;
 		}
 		return true;

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.doublecolorball.mapper.UserDAO">
+
+
+    <resultMap id="userMap" type="com.doublecolorball.model.User">
+        <id column="userId" property="id"/>
+        <result column="state" property="state"/>
+        <result column="username" property="username"/>
+        <result column="password" property="password"/>
+        <result column="nickname" property="nickname"/>
+        <result column="email" property="email"/>
+        <result column="website" property="website"/>
+        <result column="imageName" property="imagePath"/>
+    </resultMap>
+
+
+    <insert id="save">
+        INSERT INTO t_user VALUES (NULL, 0, #{username}, #{password}, #{nickname}, #{email}, #{website}, #{imagePath})
+    </insert>
+    <update id="update">
+        UPDATE t_user
+        SET nickname = #{nickname}, username = #{username}, password = #{password}, email = #{email}
+        WHERE userId = #{id}
+    </update>
+
+    <delete id="delete">
+        DELETE FROM t_user
+        WHERE userId = #{id}
+    </delete>
+
+
+    <select id="getUsers" resultMap="userMap">
+        SELECT *
+        FROM t_user
+    </select>
+    <select id="getUser" resultMap="userMap">
+        SELECT *
+        FROM t_user
+        WHERE userId = #{id}
+    </select>
+    
+    <select id="getUserByUserName" resultMap="userMap" parameterType="java.lang.String">
+        SELECT *
+        FROM t_user
+        WHERE username = #{userName}
+    </select>
+    
+    
+    
+    <select id="userIsNotEmpty" resultType="java.lang.Integer">
+        SELECT count(*)
+        FROM t_user
+        WHERE username = #{name}
+    </select>
+    <select id="pagenation" resultMap="userMap">
+        SELECT *
+        FROM t_user
+        ORDER BY userId DESC
+        LIMIT #{startIndex}, #{pageSize};
+    </select>
+
+
+</mapper>

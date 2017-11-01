@@ -47,5 +47,7 @@ public interface UserSsqDAO {
 	int deleteById(Long id);
 
 	List<UserSsq> queryNoGradeBall();
+	
+	List<UserSsq> findUserSsq(UserSsq userSsq);
   
 }

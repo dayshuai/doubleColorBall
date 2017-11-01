@@ -30,7 +30,7 @@ public class DoublecolorballInfoController{
     @Autowired
     private UserSsqService userSsqService;
     
-    @RequestMapping("list")
+    @RequestMapping("ball/list.htm")
     public String showArticle(@RequestParam(value="pageIndex", defaultValue="1")int pageIndex, ModelMap model){
         model.addAttribute("mainPage", "layout/content/doubleColorBall/list.vm");
         model.addAttribute("doubleColorBalls",doublecolorballInfoService.findAll(pageIndex, 20));
@@ -38,9 +38,16 @@ public class DoublecolorballInfoController{
     }
     
     
-    @RequestMapping("buyPage")
+    @RequestMapping("ball/buyPage.htm")
     public String buyPage(ModelMap model){
         model.addAttribute("mainPage", "layout/content/doubleColorBall/buyPage.vm");
+        return "index";
+    }
+    
+    @RequestMapping("ball/myDoubleColorBall.htm")
+    public String myDoubleColorBall(@RequestParam(value="pageIndex", defaultValue="1")int pageIndex,ModelMap model){
+    	model.addAttribute("userSsq", userSsqService.findUserSsq(pageIndex, 20));
+        model.addAttribute("mainPage", "layout/content/doubleColorBall/myDoubleColorBall.vm");
         return "index";
     }
     
@@ -52,4 +59,10 @@ public class DoublecolorballInfoController{
     	returnMap.put("returnCode", "1");
     	return returnMap;
     }
+    
+    @RequestMapping(value="login.htm")
+    public String login(ModelMap modelMap){
+    	return "login";
+    }
+    
 }

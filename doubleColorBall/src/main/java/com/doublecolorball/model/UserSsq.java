@@ -2,6 +2,9 @@ package com.doublecolorball.model;
 
 import java.util.Date;
 
+import org.apache.commons.lang3.StringUtils;
+import org.apache.ibatis.annotations.Case;
+
 public class UserSsq {
 
 	private static final long serialVersionUID = 1L;
@@ -30,9 +33,54 @@ public class UserSsq {
 	
 	private int grade;
 	
+	private String gradeDetail;
 	
 	
+	private String [] redNumArr;
 	
+	public String[] getRedNumArr() {
+		return StringUtils.isBlank(this.redNums)?null:this.redNums.split(",");
+	}
+	
+
+	
+	public String getGradeDetail() {
+		switch (this.grade) {
+			case 1:
+				this.gradeDetail = "一等奖";
+				break;
+			case 2:
+				this.gradeDetail = "二等奖";
+				break;
+			case 3:
+				this.gradeDetail = "三等奖";
+				break;
+			case 4:
+				this.gradeDetail = "四等奖";
+				break;
+			case 5:
+				this.gradeDetail = "五等奖";
+				break;
+			case 6:
+				this.gradeDetail = "六等奖";
+				break;
+			case -1:
+				this.gradeDetail = "没中奖";
+				break;
+			default:
+				this.gradeDetail = "没开奖";
+				break;
+		}
+		return gradeDetail;
+	}
+
+
+
+	public void setGradeDetail(String gradeDetail) {
+		this.gradeDetail = gradeDetail;
+	}
+
+
 
 	public int getGrade() {
 		return grade;

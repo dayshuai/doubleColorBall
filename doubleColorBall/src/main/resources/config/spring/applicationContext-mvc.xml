@@ -55,7 +55,6 @@
         <property name="exposeRequestAttributes" value="true" /><!--是否开放request属性-->  
         <property name="requestContextAttribute" value="rc"/><!--request属性引用名称-->
         <property name="layoutUrl" value="layout/layout.vm"/>
-         
     </bean>  
 	
 	<bean id="velocityConfigurer" class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">    
@@ -66,7 +65,8 @@
 	            <prop key="directive.foreach.counter.initial.value">0</prop>    
 	            <prop key="input.encoding">UTF-8</prop><!-- 指定模板引擎进行模板处理的编码 -->    
 	            <prop key="output.encoding">UTF-8</prop><!-- 指定输出流的编码 -->
-	            <prop key="velocimacro.library">horn/macro.vm</prop>     
+	            <prop key="velocimacro.library">horn/macro.vm</prop> 
+	            <prop key="toolbox.xml.path">WEB-INF/conf/vm-toolbox.xml</prop>    
 	        </props>    
 	    </property>    
 	</bean> 

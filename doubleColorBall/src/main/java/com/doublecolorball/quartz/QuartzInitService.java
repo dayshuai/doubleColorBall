@@ -18,8 +18,8 @@ public class QuartzInitService {
 		try {
 			Scheduler scheduler = (Scheduler) SpringContextUtil.getBean("quartzScheduler");
 			
-			QuartzHelper.addjob("validateBall", "com.doublecolorball.quartz.ValidateBallJob", "0 0 */1 ? * MON-SUN", scheduler);
-			QuartzHelper.addjob("spider", "com.doublecolorball.quartz.SpiderJob", "0 0 */1 ? * MON-SUN", scheduler);
+			QuartzHelper.addjob("validateBall", "com.doublecolorball.quartz.ValidateBallJob", "*/59 * * ? * MON-SUN", scheduler);
+			QuartzHelper.addjob("spider", "com.doublecolorball.quartz.SpiderJob", "*/59 * * ? * MON-SUN", scheduler);
 			
 			if (!scheduler.isShutdown())
 				scheduler.start();

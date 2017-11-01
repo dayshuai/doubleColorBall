@@ -10,9 +10,9 @@
 					<span class="myredball">${redball}</span>
 			#end
             <span class="myblueball">${ball.blueNum}</span>
-            <span class="label">销售额：${ball.saleNum}</span>
-            <span class="label">一等奖个数：${ball.firstGradeNum}</span>
-            <span class="label">二等奖个数：${ball.secondGradeNum}</span>
+            <span >销售额：${ball.saleNum}</span>
+            <span >一等奖个数：${ball.firstGradeNum}</span>
+            <span >二等奖个数：${ball.secondGradeNum}</span>
         </div>
     </section>
     <!-- 移动设备-->
@@ -26,9 +26,9 @@
 					<span class="myredball">${redball}</span>
 			#end
             <span class="myblueball">${ball.blueNum}</span>
-            <span class="label">销售额：${ball.saleNum}</span>
-            <span class="label">一等奖个数：${ball.firstGradeNum}</span>
-            <span class="label">二等奖个数：${ball.secondGradeNum}</span>
+            <span >销售额：${ball.saleNum}</span>
+            <span >一等奖个数：${ball.firstGradeNum}</span>
+            <span >二等奖个数：${ball.secondGradeNum}</span>
         </div>
     </section>
 </div>

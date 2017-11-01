@@ -1,0 +1,15 @@
+html,body,div,
+form,object,iframe,p,table,th,td,ul,li,dl,dt,dd,
+h1,h2,h3,h4,h5,h6,
+button,input,span,em,s,textarea,b,u,a,img,select,header,footer,nav,menu,article,aside,section,time{ margin:0; padding:0}
+button,a{ cursor: pointer;}
+input,select,label,img{ vertical-align:middle}
+img{border:none}
+s,u{text-decoration:none}
+em,i{font-style:normal}
+ul,li,dl,dt,dd{ list-style:none}
+table,tr,td,th{ border-collapse:collapse;border-spacing:0}
+span.clear{ display: block; clear: both; height: 0px; overflow: hidden;}
+.clear{zoom:1}
+.clear:after{ clear:both; overflow:hidden;zoom:1; height:0px;  font-size:0; line-height:0;content:".";display:block;}
+

@@ -1,12 +1,14 @@
 package com.doublecolorball.utils;
 
-import javax.imageio.ImageIO;
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
-import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Random;
+
+import javax.imageio.ImageIO;
 
 /**
  * Created by SuperS on 16/2/23.
