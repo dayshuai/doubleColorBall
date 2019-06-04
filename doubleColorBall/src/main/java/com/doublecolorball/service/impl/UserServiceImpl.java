@@ -85,7 +85,7 @@ public class UserServiceImpl implements UserService {
         try {
             u = userDAO.getUserByUserName(userName);
         } catch (Exception e) {
-        }
+        	e.printStackTrace();        }
         return u;
     }
 }
