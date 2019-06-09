@@ -1,9 +1,15 @@
 package com.doublecolorball.shiro;
 
+import java.io.Serializable;
+
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-public class SessionUser {
+public class SessionUser implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2342071566752167733L;
 	private Integer id;
 	private String username;
 	private String nickname;

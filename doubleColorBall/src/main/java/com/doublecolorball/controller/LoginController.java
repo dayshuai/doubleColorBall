@@ -17,12 +17,15 @@ import org.apache.shiro.subject.Subject;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.apache.shiro.web.session.mgt.DefaultWebSessionManager;
 import org.apache.shiro.web.util.WebUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.doublecolorball.shiro.SessionUser;
+import com.doublecolorball.shiro.ShiroRealm;
 import com.doublecolorball.utils.PublicKeyMap;
 import com.doublecolorball.utils.RSAUtils;
 import com.doublecolorball.utils.SecurityUtil;
@@ -30,6 +33,7 @@ import com.doublecolorball.utils.SecurityUtil;
 @Controller
 @RequestMapping("/login")
 public class LoginController {
+	private static final Logger log = LoggerFactory.getLogger(LoginController.class);
 
 	
 	@ResponseBody
@@ -66,6 +70,7 @@ public class LoginController {
 		} catch (Exception e) {
 			result.put("return_code", 1);
 			result.put("return_msg", "服务端异常, 请联系管理员！");
+			log.error("error:{}",e);
 			return result;
 		}
 		result.put("return_code", 0);

@@ -8,11 +8,27 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-	<bean id="shiroRealm" class="com.doublecolorball.shiro.ShiroRealm"></bean>
+   <context:component-scan base-package="com.doublecolorball.*"/>
 
-	<bean id="shiroCacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager"></bean>
+	<bean id="shiroRealm" class="com.doublecolorball.shiro.ShiroRealm">
+		 <!-- 打开缓存 -->
+        <property name="cachingEnabled" value="true"/>
+        <!-- 打开身份认证缓存 -->
+        <property name="authenticationCachingEnabled" value="true"/>
+        <!-- 打开授权缓存 -->
+        <property name="authorizationCachingEnabled" value="true"/>
+	</bean>
+	
+	
+	<bean id="redisManager" class="com.doublecolorball.cache.redis.RedisManager"></bean>
 
-	<bean id="sessionDAO" class="org.apache.shiro.session.mgt.eis.MemorySessionDAO"></bean>
+	<bean id="cacheManager" class="com.doublecolorball.cache.redis.RedisCacheManager">
+		<property name="redisManager" ref="redisManager"/>
+	</bean>
+
+	<bean id="sessionDAO" class="com.doublecolorball.cache.redis.RedisSessionDao">
+		<property name="expire" value="36000000"></property>
+	</bean>
 	
 	<bean id="sessionIdCookie" class="org.apache.shiro.web.servlet.SimpleCookie">
 		<constructor-arg name="name" value="zxd_session_id" />
@@ -29,27 +45,20 @@
 	
 	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
 		<property name="realm" ref="shiroRealm" />
-		<property name="cacheManager" ref="shiroCacheManager" />
+		<property name="cacheManager" ref="cacheManager" />
 		<property name="sessionManager" ref="sessionManager"></property>
 	</bean>
 
-	<!-- <bean id="urlPermissionFilter" class="com.itoyun.oos.shiro.filter.UrlPermissionFilter"></bean> -->
 	
 	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
 		<property name="securityManager" ref="securityManager" />
         <property name="loginUrl" value="/login.htm" />
         <property name="unauthorizedUrl" value="/unauthorized.json" />
         <property name="successUrl" value="/" />
-       <!--  <property name="filters">
-			<map>
-				<entry key="urlPerm" value-ref="urlPermissionFilter" />
-			</map>
-		</property> -->
         <property name="filterChainDefinitions">
             <value>
 				/login.htm=anon
 				/login/login.json=anon
-				/login/getSecurityPublicKey.json=anon
 				/kaptcha.jpg=anon
 				/ball/**=user
             </value>
