@@ -1,4 +1,7 @@
 package com.doublecolorball.model;
+
+import java.io.Serializable;
+
 /**
  * Created by SuperS on 16/2/23.
  * 对应 t_user 表
@@ -11,8 +14,9 @@ package com.doublecolorball.model;
  * website  用户网站
  * imageName用户头像名称
  */
-public class User {
-    private Integer id;
+public class User implements Serializable{
+	private static final long serialVersionUID = 6868890197437091147L;
+	private Integer id;
     private Integer state;
     private String username;
     private String password;

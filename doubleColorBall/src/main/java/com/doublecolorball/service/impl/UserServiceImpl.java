@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import com.doublecolorball.mapper.UserDAO;
@@ -78,7 +79,7 @@ public class UserServiceImpl implements UserService {
         }
         return users;
     }
-    
+    @Cacheable(value="user",key="'user'+#userName")
     @Override
     public User getUserByUserName(String userName) {
         User u = null;
